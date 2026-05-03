@@ -49,8 +49,15 @@ Despite using fewer ensemble components than top-ranked systems, BEAT2AASIST dem
 
 If you use this code or find it helpful in your research, please cite the corresponding paper:
 
-TBD
-
-
-
-BEAT2AASIST: BEATs Feature Splitting with Dual-Branch AASIST for Environmental Sound Deepfake Detection
+```
+@INPROCEEDINGS{11461593,
+  author={Chung, Sanghyeok and Kim, Eujin and Kim, Donggun and Heo, Gaeun and You, Jeongbin and Lee, Nahyun and Choi, Sunmook and Han, Soyul and Oh, Seungsang and Kwak, Il-Youp},
+  booktitle={ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={BEAT2AASIST Model with Layer Fusion for ESDD 2026 Challenge}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={21763-21765},
+  keywords={Deepfakes;Vocoders;Videos;Protocols;HTTP;Communication equipment;Telephone equipment;Fuses;Electronic components;Convolutional neural networks;ESDD;BEATs;Multi-layer fusion;Vocoder},
+  doi={10.1109/ICASSP55912.2026.11461593}}
+```  
