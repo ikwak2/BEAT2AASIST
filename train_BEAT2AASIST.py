@@ -85,7 +85,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='BEAT2AASIST')
 
     ### Model Hyperparameters
-    #parser.add_argument('--pre_trained_path',   type=str, default='/Data/data/sanghyeok/IJCAI/networks/BEATs_iter3.pt')
+    #parser.add_argument('--pre_trained_path',   type=str, default='/Data/data/sanghyeok/IJCAI_OFFICIAL/networks/BEATs_iter3.pt')
     parser.add_argument('--pre_trained_path',   type=str, default=None,        help='Path to the pre-trained BEATs model parameters.')
     parser.add_argument('--feature_split',      type=str, default='Frequency', help='Feature Split method      : Frequency/Channel/None.')
     parser.add_argument('--multi_layer_fusion', type=str, default='CNN-gate',  help='Multi-layer Fusion method : CNN-gate/SE-gate/Concat/None.')
