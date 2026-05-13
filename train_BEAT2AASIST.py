@@ -97,7 +97,7 @@ if __name__ == '__main__':
     parser.add_argument('--num_workers', type=int,   default=2,        help='Number of worker processes for parallel data loading.')
     parser.add_argument('--seed',        type=int,   default=2025)
 
-    parser.add_argument('--num_epochs',  type=int,   default=1,        help='Number of train epochs.')
+    parser.add_argument('--num_epochs',  type=int,   default=20,        help='Number of train epochs.')
     parser.add_argument('--batch_size',  type=int,   default=32,       help='Batch size.')
     parser.add_argument('--lr',          type=float, default=0.000001, help='Learning rate.')
     parser.add_argument('--lr_decay',    type=float, default=0.9,      help='Learning rate decay (linear).')
