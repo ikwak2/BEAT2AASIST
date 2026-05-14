@@ -55,6 +55,7 @@ BEAT2AASIST/
 ├── jsons/
 │   └── get_jsons.py          # Utility script for preparing JSON metadata
 └── metadata/                 # ESDD metadata files
+```
 
 ---
 
