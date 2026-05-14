@@ -39,8 +39,102 @@ Despite using fewer ensemble components than top-ranked systems, BEAT2AASIST dem
 
 ---
 
-## Code 관련 설명: 
-상혁학생 코드 업데이트 후 여기부분 작성 부탁합니다. :)
+## Repository Structure
+
+```text
+BEAT2AASIST/
+├── train_BEAT2AASIST.py      # Main training and evaluation script
+├── train.sh                  # Example training command
+├── networks/
+│   ├── BEAT2AASIST.py        # BEAT2AASIST model definition
+│   ├── AASIST.py             # AASIST-based back-end network
+│   └── beats/                # BEATs encoder implementation
+├── utils/
+│   ├── data_utils.py         # Dataset loading, feature extraction, and EER evaluation utilities
+│   └── eval_metrics.py       # Evaluation metrics
+├── jsons/
+│   └── get_jsons.py          # Utility script for preparing JSON metadata
+└── metadata/                 # ESDD metadata files
+
+---
+
+## Training
+
+An example training command is:
+```
+python train_BEAT2AASIST.py \
+  --root_path /path/to/BEAT2AASIST \
+  --pre_trained_path /path/to/BEATs_iter3.pt \
+  --track 1 \
+  --feature_split Frequency \
+  --multi_layer_fusion CNN-gate \
+  --top_k 4 \
+  --vocoder_aug True \
+  --device cuda:0
+```
+
+Main arguments:
+
+| Argument               | Description                                                                              |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| `--root_path`          | Root directory containing `jsons/`, `metadata/`, and experiment outputs                  |
+| `--pre_trained_path`   | Path to the pre-trained BEATs checkpoint. If not provided, BEATs is trained from scratch |
+| `--track`              | ESDD challenge track number, either `1` or `2`                                           |
+| `--feature_split`      | Feature splitting strategy: `Frequency`, `Channel`, or `None`                            |
+| `--multi_layer_fusion` | Layer fusion strategy: `CNN-gate`, `SE-gate`, `Concat`, or `None`                        |
+| `--top_k`              | Number of top BEATs transformer layers used for multi-layer fusion                       |
+| `--vocoder_aug`        | Whether to use vocoder-generated fake audio augmentation                                 |
+| `--time_mask`          | Whether to apply time masking during training                                            |
+| `--freq_mask`          | Whether to apply frequency masking during training                                       |
+| `--batch_size`         | Training batch size                                                                      |
+| `--num_epochs`         | Number of training epochs                                                                |
+| `--lr`                 | Learning rate                                                                            |
+| `--device`             | Device used for training and inference                                                   |
+
+The training script expects JSON files under
+```
+{root_path}/jsons/
+```
+
+The expected files are:
+```
+dev_track{track}_train.json
+dev_track{track}_valid.json
+eval_track{track}.json
+test_track{track}.json
+```
+
+Each JSON file should contain a list of items with the following format:
+```
+[
+  {
+    "file_path": "/path/to/audio.wav",
+    "label": "real"
+  },
+  {
+    "file_path": "/path/to/fake_audio.wav",
+    "label": "fake"
+  }
+]
+```
+
+
+### Output Files
+Training results are saved under:
+```
+{root_path}/exp_track{track}/BEAT2AASIST_Split_{feature_split}_Fusion_{multi_layer_fusion}_Topk_{top_k}/
+```
+
+The directory contains:
+```
+log.txt
+ckpts/
+├── saved_model.pt
+├── val_scores.txt
+├── eval_scores.txt
+└── test_scores.txt
+```
+The best checkpoint is selected based on the lowest test EER during training.
 
 
 ---
