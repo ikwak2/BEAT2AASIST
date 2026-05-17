@@ -1,6 +1,6 @@
-# BEAT2AASIST: BEATs Feature Splitting with Dual-Branch AASIST
+# BEAT2AASIST
 
-This is the official repository for the paper **"BEAT2AASIST: BEATS Feature Splitting with Dual-Branch AASIST for Environmental Sound Deepfake Detection"**. 
+This is the official repository for the paper **"BEAT2AASIST: BEATs Feature Splitting with Dual-Branch AASIST for Environmental Sound Deepfake Detection"**, accepted to the *2026 International Joint Conference on Artificial Intelligence and European Conference on Artificial Intelligence (IJCAI-ECAI 2026)*, Bremen, Germany. 
 
 BEAT2AASIST is an enhanced deepfake detection framework developed for the [Environmental Sound Deepfake Detection (ESDD) 2026 Challenge](https://sites.google.com/view/esdd-challenge/esdd-challenges/esdd-1/). It addresses the limitations of the existing BEATs-AASIST baseline and effectively detects various spoofing artifacts under unseen generator and black-box conditions.
 
@@ -10,7 +10,7 @@ The proposed approach achieved competitive performance in the ESDD 2026 Challeng
 
 ## Overview
 
-BEAT2AASIST maximizes detection performance through three main architectural and training strategies:
+BEAT2AASIST improves detection performance through three main architectural and training strategies:
 
 *   **Dual-Branch AASIST Architecture**: The 1D token sequence extracted from the BEATs encoder is explicitly split along either the frequency or channel dimension and processed in parallel by two independent AASIST branches. This design enables specialized modeling of distinct spoofing characteristics.
 *   **Multi-layer Fusion**: Instead of relying solely on the final transformer layer of BEATs, it aggregates information from the top-k layers to capture richer and more hierarchical acoustic cues. Supported fusion mechanisms include Concatenation, CNN-gated, and SE-gated strategies.
@@ -135,7 +135,7 @@ ckpts/
 ├── eval_scores.txt
 └── test_scores.txt
 ```
-The best checkpoint is selected based on the lowest test EER during training.
+The best checkpoint is selected based on the lowest validation EER during training.
 
 
 ---
@@ -144,6 +144,10 @@ The best checkpoint is selected based on the lowest test EER during training.
 
 If you use this code or find it helpful in your research, please cite the corresponding paper:
 
+### IJCAI-ECAI 2026
+TBD
+
+### ICASSP 2026 Challenge track
 ```
 @INPROCEEDINGS{11461593,
   author={Chung, Sanghyeok and Kim, Eujin and Kim, Donggun and Heo, Gaeun and You, Jeongbin and Lee, Nahyun and Choi, Sunmook and Han, Soyul and Oh, Seungsang and Kwak, Il-Youp},
@@ -155,4 +159,4 @@ If you use this code or find it helpful in your research, please cite the corres
   pages={21763-21765},
   keywords={Deepfakes;Vocoders;Videos;Protocols;HTTP;Communication equipment;Telephone equipment;Fuses;Electronic components;Convolutional neural networks;ESDD;BEATs;Multi-layer fusion;Vocoder},
   doi={10.1109/ICASSP55912.2026.11461593}}
-```  
+```
