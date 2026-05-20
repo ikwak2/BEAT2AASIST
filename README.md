@@ -20,7 +20,7 @@ BEAT2AASIST improves detection performance through three main architectural and 
 
 ## Datasets
 
-The experiments are based on data provided by the **ICASSP 2026 Environmental Sound Deepfake Detection Challenge (ESDD) Challenge**,
+The experiments are based on data provided by the **ICASSP 2026 Environmental Sound Deepfake Detection Challenge (ESDD) Challenge**.
 
 The datasets can be accessed from [here](https://sites.google.com/view/esdd-challenge/esdd-challenges/esdd-1/dataset?authuser=0)
 
@@ -36,7 +36,7 @@ Datasets/
 └── test_track2/
 ```
 
-Run the code below to generate the data list(json files) based on your custom directory path.
+Run the code below to generate the data list(JSON files) based on your custom directory path.
 
 ```
 python jsons/get_jsons.py \
