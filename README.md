@@ -24,6 +24,38 @@ The experiments are based on data provided by the **ICASSP 2026 Environmental So
 
 The datasets can be accessed from [here](https://sites.google.com/view/esdd-challenge/esdd-challenges/esdd-1/dataset?authuser=0)
 
+After downloading the data from the link above, place the data in your own directory as shown below.
+
+```text
+Datasets/
+├── development/      
+├── dev_track2/      
+├── eval_track1/
+├── eval_track2/
+├── test_track1/
+└── test_track2/
+```
+
+Run the code below to generate the data list(json files) based on your custom directory path.
+
+```
+python jsons/get_jsons.py \
+  --root_path /path/to/BEAT2AASIST \
+  --data_path /path/to/Datasets \
+```
+
+Running the code above will generate the following files in the jsons folder.
+```
+dev_track1_train.json
+dev_track1_valid.json
+dev_track2_train.json
+dev_track2_valid.json
+eval_track1.json
+eval_track2.json
+test_track1.json
+test_track2.json
+```
+
 ---
 
 ## Challenge Results
