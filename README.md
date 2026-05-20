@@ -36,7 +36,7 @@ Datasets/
 └── test_track2/
 ```
 
-Run the code below to generate the data list(JSON files) based on your custom directory path.
+Run the code below to generate the data list (JSON files) based on your custom directory path.
 
 ```
 python jsons/get_jsons.py \
