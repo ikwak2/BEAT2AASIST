@@ -124,6 +124,7 @@ Main arguments:
 | `--lr`                 | Learning rate                                                                            |
 | `--device`             | Device used for training and inference                                                   |
 
+<!--
 The training script expects JSON files under
 ```
 {root_path}/jsons/
@@ -150,7 +151,7 @@ Each JSON file should contain a list of items with the following format:
   }
 ]
 ```
-
+-->
 
 ### Output Files
 Training results are saved under:
