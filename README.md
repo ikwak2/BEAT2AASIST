@@ -46,14 +46,15 @@ python jsons/get_jsons.py \
 
 Running the code above will generate the following files in the jsons folder.
 ```
-dev_track1_train.json
-dev_track1_valid.json
-dev_track2_train.json
-dev_track2_valid.json
-eval_track1.json
-eval_track2.json
-test_track1.json
-test_track2.json
+jsons/
+├── dev_track1_train.json
+├── dev_track1_valid.json
+├── dev_track2_train.json
+├── dev_track2_valid.json
+├── eval_track1.json
+├── eval_track2.json
+├── test_track1.json
+└── test_track2.json
 ```
 
 ---
