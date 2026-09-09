@@ -179,7 +179,20 @@ The best checkpoint is selected based on the lowest validation EER during traini
 If you use this code or find it helpful in your research, please cite the corresponding paper:
 
 ### IJCAI-ECAI 2026
-TBD
+```
+@inproceedings{chung2026beat2aasist,
+  title     = {{BEAT2AASIST}: {BEATs} Feature Splitting with Dual-Branch
+               {AASIST} for Environmental Sound Deepfake Detection},
+  author    = {Chung, Sanghyeok and Oh, Seungsang and Kim, Donggun and
+               You, Jeongbin and Kwak, Il-Youp and Kim, Eujin and
+               Heo, Gaeun and Lee, Nahyun and Choi, Sunmook and Han, Soyul},
+  booktitle = {Proceedings of the Thirty-Fifth International Joint
+               Conference on Artificial Intelligence (IJCAI-ECAI 2026)},
+  year      = {2026},
+  address   = {Bremen, Germany},
+  note      = {To appear}
+}
+```
 
 ### ICASSP 2026 Challenge track
 ```
